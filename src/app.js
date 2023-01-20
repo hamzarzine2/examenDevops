@@ -1,4 +1,3 @@
-
 /* istanbul ignore file */
 try {
     const { validation } = require("./services/validations");
