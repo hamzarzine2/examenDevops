@@ -23,10 +23,12 @@ describe("validations tests suites - isEmpty", () => {
         const result = validation("hamza");
         expect(result).toBe(false);
     });
-    it("should return true if lengt >8",()=>{
+    it("should return true if lengt >=8",()=>{
         const result = validation("hamzarzine");
         expect(result).toBe(true);
     });
+    
+
     
 });
 
