@@ -1,4 +1,4 @@
-const { isEmpty } = require("../validations");
+const { validation,isEmpty } = require("../validations");
 
 describe("validations tests suites - isEmpty", () => {
     test("should return true as the label is undefined", () => {
@@ -13,6 +13,10 @@ describe("validations tests suites - isEmpty", () => {
 
     test("should return false as the label is empty", () => {
         const result = isEmpty("Label");
+        expect(result).toBe(false);
+    });
+    it("should return false if empty",()=>{
+        const result = validation("");
         expect(result).toBe(false);
     });
 });
