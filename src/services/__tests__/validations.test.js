@@ -31,6 +31,10 @@ describe("validations tests suites - isEmpty", () => {
         const result = validation("hamzarzine");
         expect(result).toBe(false);
     });
+    it("should return true if contains at least one number",()=>{
+        const result = validation("hamzarzine48");
+        expect(result).toBe(true);
+    });
 
     
 });
