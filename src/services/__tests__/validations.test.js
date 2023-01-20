@@ -19,6 +19,11 @@ describe("validations tests suites - isEmpty", () => {
         const result = validation("");
         expect(result).toBe(false);
     });
+    it("should return false if lengt <8",()=>{
+        const result = validation("hamza");
+        expect(result).toBe(false);
+    });
+    
 });
 
 // TODO: Create tests suite for validation function
