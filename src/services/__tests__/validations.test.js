@@ -43,6 +43,10 @@ describe("validations tests suites - isEmpty", () => {
         const result = validation("hamzarzine..48");
         expect(result).toBe(true);
     });
+    it("should return true if lentgh >=8 and contains number and special char",()=>{
+        const result = validation("LeHamze..48");
+        expect(result).toBe(true);
+    }); 
     
 });
 
