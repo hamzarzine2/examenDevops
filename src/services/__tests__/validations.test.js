@@ -1,4 +1,4 @@
-const { isEmpty } = require("../validations");
+const { validation, isEmpty } = require("../validations");
 
 describe("validations tests suites - isEmpty", () => {
     test("should return true as the label is undefined", () => {
@@ -14,6 +14,38 @@ describe("validations tests suites - isEmpty", () => {
     test("should return false as the label is empty", () => {
         const result = isEmpty("Label");
         expect(result).toBe(false);
+    });
+    it("should return false if empty", () => {
+        const result = validation("");
+        expect(result).toBe(false);
+    });
+    it("should return false if lengt <8", () => {
+        const result = validation("hamza");
+        expect(result).toBe(false);
+    });
+    it("should return true if lengt >=8", () => {
+        const result = validation("hamzarzine2#");
+        expect(result).toBe(true);
+    });
+    it("should return false if don't contains a number", () => {
+        const result = validation("hamzarzine");
+        expect(result).toBe(false);
+    });
+    it("should return true if contains at least one number", () => {
+        const result = validation("hamzarzine48/");
+        expect(result).toBe(true);
+    });
+    it("should return false if do not at least contains one special char", () => {
+        const result = validation("hamzarzine48");
+        expect(result).toBe(false);
+    });
+    it("should return true if contains at least  one special char", () => {
+        const result = validation("hamzarzine..48");
+        expect(result).toBe(true);
+    });
+    it("should return true if lentgh >=8 and contains number and special char", () => {
+        const result = validation("LeHamze..48");
+        expect(result).toBe(true);
     });
 });
 
