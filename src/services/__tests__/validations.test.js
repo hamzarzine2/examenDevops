@@ -24,7 +24,7 @@ describe("validations tests suites - isEmpty", () => {
         expect(result).toBe(false);
     });
     it("should return true if lengt >=8",()=>{
-        const result = validation("hamzarzine2");
+        const result = validation("hamzarzine2#");
         expect(result).toBe(true);
     });
     it("should return false if don't contains a number",()=>{
@@ -32,8 +32,12 @@ describe("validations tests suites - isEmpty", () => {
         expect(result).toBe(false);
     });
     it("should return true if contains at least one number",()=>{
-        const result = validation("hamzarzine48");
+        const result = validation("hamzarzine48/");
         expect(result).toBe(true);
+    });
+    it("should return false if do not at least contains one special char",()=>{
+        const result = validation("hamzarzine48");
+        expect(result).toBe(false);
     });
 
     
