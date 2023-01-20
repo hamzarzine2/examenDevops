@@ -39,7 +39,10 @@ describe("validations tests suites - isEmpty", () => {
         const result = validation("hamzarzine48");
         expect(result).toBe(false);
     });
-
+    it("should return true if contains at least  one special char",()=>{
+        const result = validation("hamzarzine..48");
+        expect(result).toBe(true);
+    });
     
 });
 
